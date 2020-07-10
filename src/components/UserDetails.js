@@ -19,7 +19,7 @@ class UserDetails extends Component {
             id="firstName"
             hintText="Enter Your First Name"
             floatingLabelText="First Name"
-            onChange={handleChange("firstName")}
+            onChange={handleChange}
             defaultValue={values.firstName}
             style={styles.marginRight}
           />
@@ -27,7 +27,7 @@ class UserDetails extends Component {
           <TextField
             hintText="Enter Your Last Name"
             floatingLabelText="Last Name"
-            onChange={handleChange("lastName")}
+            onChange={handleChange}
             defaultValue={values.lastName}
             style={styles.marginRight}
           />
@@ -35,7 +35,7 @@ class UserDetails extends Component {
           <TextField
             hintText="Enter Your Email"
             floatingLabelText="Email"
-            onChange={handleChange("email")}
+            onChange={handleChange}
             defaultValue={values.email}
             style={styles.marginRight}
           />
