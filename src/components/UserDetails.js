@@ -4,18 +4,31 @@ import Appbar from "material-ui/AppBar";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 class UserDetails extends Component {
+  
   continue = (e) => {
-    e.preventDefault();
-    this.props.nextStep();
-  };
+    const firstName = document.getElementById('firstName')
+    const lastName = document.getElementById('lastName')
+    const email = document.getElementById('email')
+    if(firstName.value===''){
+      firstName.style.boxShadow ='0px 0px 15px 0px lightblue'
+    }
+    if(lastName.value===''){
+      lastName.style.boxShadow ='0px 0px 15px 0px lightblue'
+    }
+    if(email.value===''){
+      email.style.boxShadow ='0px 0px 15px 0px lightblue'
+    }
+    else {e.preventDefault();
+      this.props.nextStep();
+   }
+     };
   render() {
     const { values, handleChange } = this.props;
     return (
-        
       <MuiThemeProvider>
-      <React.Fragment> 
+        <React.Fragment>
           <Appbar title="Enter User Details" />
-         <TextField
+          <TextField
             id="firstName"
             hintText="Enter Your First Name"
             floatingLabelText="First Name"
@@ -25,6 +38,7 @@ class UserDetails extends Component {
           />
           <br />
           <TextField
+            id="lastName"
             hintText="Enter Your Last Name"
             floatingLabelText="Last Name"
             onChange={handleChange}
@@ -33,6 +47,7 @@ class UserDetails extends Component {
           />
           <br />
           <TextField
+            id="email"
             hintText="Enter Your Email"
             floatingLabelText="Email"
             onChange={handleChange}
@@ -41,15 +56,14 @@ class UserDetails extends Component {
           />
           <br />
           <RaisedButton
+            id="continueButton"
             label="Continue"
             primary={true}
             style={styles.marginRight}
             onClick={this.continue}
           />
-          
-          </React.Fragment>
+        </React.Fragment>
       </MuiThemeProvider>
-     
     );
   }
 }
@@ -58,6 +72,5 @@ const styles = {
     margin: 15,
   },
 };
-
 
 export default UserDetails;
